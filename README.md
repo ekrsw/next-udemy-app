@@ -67,3 +67,17 @@ npx prisma studio
 // DBリセット
 npx prisma migrate reset
 ```
+## マイグレーションでエラーが出たら
+```
+// 全てのマイグレーションファイルを削除
+rm -rf prisma/migrations
+
+// dev.dbファイルも削除
+rm prisma/dev.db
+
+// 新しいマイグレーションファイルを作成
+npx prisma migrate dev --name init
+
+// シードを実行
+npx prisma db seed
+```
