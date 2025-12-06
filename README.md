@@ -39,9 +39,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ```
 git clone https://github.com/ekrsw/next-udemy-app.git
 
+// PrismaとPrisma Clientをインストール
 npm install prisma@^6 @prisma/client@^6
 
-npm install -D ts-node@^10
+//タイプスクリプトをNode.jsで直接実行できるランタイム
+npm install --save-dev tsx
+
+// tsxがあれば不要
+// npm install -D ts-node@^10
 
 npm install bcryptjs@^2
 
@@ -50,7 +55,6 @@ npm install @types/bcryptjs@^2
 
 ## マイグレーション
 ```
-npm install --save-dev tsx
 // マイグレーション（テーブル作成）
 npx prisma migrate dev --name init
 

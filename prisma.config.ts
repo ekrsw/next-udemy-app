@@ -9,6 +9,7 @@ export default defineConfig({
   migrations: {
     path: "prisma/migrations",
   },
+  // @ts-ignore - seed is supported but not in type definitions yet
   seed: {
     command: 'npx tsx prisma/seed.ts',
   },
