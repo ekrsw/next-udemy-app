@@ -26,7 +26,7 @@ export default function PostCard({post}: PostCardProps) {
                 />
               </div>
             )}
-            <CardHeader>
+            <CardHeader className="pt-4">
                 <CardTitle className="line-clamp-2">{post.title}</CardTitle>
             </CardHeader>
             <CardContent>
