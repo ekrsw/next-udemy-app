@@ -12,16 +12,16 @@ import { PostCardProps } from "@/types/post"
 
 export default function PostCard({post}: PostCardProps) {
   return (
-    <Card className="hover:shadow-lg transition-shadow">
-        <Link href="{`/posts/${post.id}`}">
+    <Card className="hover:shadow-lg transition-shadow overflow-hidden pt-0">
+        <Link href={`/posts/${post.id}`}>
             {post.topImage && (
               <div className="relative w-full h-48">
                 <Image
                   src={post.topImage}
                   alt={post.title}
                   fill
-                  sizes="(max-width: 768px) 100w, (max-width: 1200px) 50vw, 33vw"
-                  className="rounded-t-md object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
                   priority
                 />
               </div>
