@@ -71,9 +71,14 @@ npx prisma migrate reset
 ```
 // 全てのマイグレーションファイルを削除
 rm -rf prisma/migrations
+// PowerShell
+Remove-Item -Recurse -Force prisma/migrations
+
 
 // dev.dbファイルも削除
 rm prisma/dev.db
+// PowerShell
+Remove-Item .\prisma\dev.db
 
 // 新しいマイグレーションファイルを作成
 npx prisma migrate dev --name init
