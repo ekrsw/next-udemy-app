@@ -74,7 +74,6 @@ rm -rf prisma/migrations
 // PowerShell
 Remove-Item -Recurse -Force prisma/migrations
 
-
 // dev.dbファイルも削除
 rm prisma/dev.db
 // PowerShell
@@ -85,4 +84,8 @@ npx prisma migrate dev --name init
 
 // シードを実行
 npx prisma db seed
+```
+## プロキシ環境で画像サイトを使用するためにSSL検証を無効化して起動するコマンド
+```
+$env:NODE_TLS_REJECT_UNAUTHORIZED="0"; npm run dev
 ```
