@@ -23,7 +23,7 @@ export default async function PostPage({params}: Params) {
     }
     return (
         <div className="container mx-auto px-4 py-8">
-            <Card className="max-w-3xl mx-auto">
+            <Card className="max-w-3xl mx-auto pt-0 overflow-hidden">
                 {post.topImage && (
                 <div className="relative w-full h-64 lg:h-96">
                     <Image
