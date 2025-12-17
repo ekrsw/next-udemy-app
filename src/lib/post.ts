@@ -28,3 +28,32 @@ export async function getPost(id: string) {
         }
     })
 }
+
+export async function serchPosts(search: string) {
+    const decodeSearch = decodeURLComponent(search);
+    const normalizedSearch = decodeSearch.replace(/[\s　]+/g, " ").trim();
+    const searchWords = normalizedSearch.split(" ").filter(Boolean);
+
+    const filters = searchWords.map( word =>({
+        OR : [
+            { title: { contains: word }},
+            { content: { contains: word }},
+        ]
+    }))
+
+    return await prisma.post.findMany({
+        where: {
+            AND: filters
+        },
+        include: {
+            author: {
+                select: {
+                    name: true
+                }
+            }
+        },
+        orderBy: {
+            createdAt: "desc"
+        }
+    })
+}
