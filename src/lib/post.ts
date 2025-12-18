@@ -29,8 +29,8 @@ export async function getPost(id: string) {
     })
 }
 
-export async function serchPosts(search: string) {
-    const decodeSearch = decodeURLComponent(search);
+export async function searchPosts(search: string) {
+    const decodeSearch = decodeURIComponent(search);
     const normalizedSearch = decodeSearch.replace(/[\s　]+/g, " ").trim();
     const searchWords = normalizedSearch.split(" ").filter(Boolean);
 

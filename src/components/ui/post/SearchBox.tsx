@@ -14,20 +14,22 @@ export default function SearchBox() {
             setDebouncedSearch(search)
         }, 500)
 
-        // debouncedSearchが更新されたら実行
-        useEffect(()=>{
-            if(debouncedSearch.trim()){
-                router.push(`/?search=${debouncedSearch.trim()}`)
-            } else {
-                router.push('/')
-            }
-        }, [debouncedSearch, router])
+        return () => clearTimeout(timer)
     }, [search])
+
+    // debouncedSearchが更新されたら実行
+    useEffect(()=>{
+        if(debouncedSearch.trim()){
+            router.push(`/?search=${debouncedSearch.trim()}`)
+        } else {
+            router.push('/')
+        }
+    }, [debouncedSearch, router])
     return (
         <>
         <Input
             placeholder="記事を検索..."
-            className="w-[200px] lg:w-[300px]"
+            className="w-[200px] lg:w-[300px] bg-white"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
         />
