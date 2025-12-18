@@ -89,3 +89,13 @@ npx prisma db seed
 ```
 $env:NODE_TLS_REJECT_UNAUTHORIZED="0"; npm run dev
 ```
+
+## auth.jsのインストール
+```
+npm install next-auth@bata
+```
+## シークレットキー生成
+```
+npx auth secret
+// .env.localファイルにAUTH_SECRETが生成されるので、.envへ統合
+```
