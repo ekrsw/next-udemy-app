@@ -99,3 +99,7 @@ npm install next-auth@bata
 npx auth secret
 // .env.localファイルにAUTH_SECRETが生成されるので、.envへ統合
 ```
+## zodのインストール
+```
+npm install zod@^3
+```
