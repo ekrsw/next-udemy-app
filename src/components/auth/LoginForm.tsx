@@ -22,7 +22,7 @@ export default function LoginForm() {
                 <CardTitle>ログイン</CardTitle>
             </CardHeader>
             <CardContent>
-                <form action="{formAction" className="space-y-4">
+                <form action={formAction} className="space-y-4">
                     <div className="space-y-2">
                         <Label htmlFor="email">メールアドレス</Label>
                         <Input id="email" type="email" name="email" required />
@@ -34,7 +34,7 @@ export default function LoginForm() {
                     <Button type="submit" className="w-full">ログイン</Button>
                     <div className="flex h-8 items-end space-x-1">
                     {errorMessage && (
-                        <div className="h-5 w-5 text-red-500">
+                        <div className="text-red-500">
                         <p className="text-sm text-red-500">{errorMessage}</p>
                         </div>
                     )}
